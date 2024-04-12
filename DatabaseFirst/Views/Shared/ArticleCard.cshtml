@@ -1,0 +1,23 @@
+﻿@model Article
+
+<a asp-action="Details" asp-route-id="@Model.Id"class="text-decoration-none text-reset" >
+<div class="card">
+	<div class="card-header fw-bold" style="background-color:#f25b2a">
+		@Model.Headline
+	</div>
+	<img src="/img/@Model.ImageFile" alt="Ein Bild oder so ..." class="img-fluid" />
+	<div class="card-body">
+		@if (Model.Content.Length > 100)
+		{
+			@Model.Content.Substring(0, 100) @:...
+		}
+		else
+		{
+			@Model.Content
+		}
+	</div>
+	<div class="card-footer">
+		@Model.Author | @Model.Created.ToShortDateString()
+	</div>
+</div>
+</a>

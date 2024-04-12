@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IndexViewModel
+@{
+	ViewBag.Title = "Startseite ASP.NET Core 8.5.0.3.4a v.2";
+	//optional: Layout = "wasauchimmer"; fuer ein anderes layout (falls mehrere noetig/gewuenscht)
+}
+
+<h3 class="bg-danger text-white	text-center">Top News</h3>
+@if (Model.TopArticle != null)
+{
+	<partial name="ArticleCard" model="Model.TopArticle" />
+}
+
+<h3 class="bg-danger text-white text-center">Weitere News</h3>
+@if (Model.Articles != null)
+{
+	<div class="row">
+		@foreach (var item in Model.Articles)
+		{
+			<div class="col-xl-3 col-lg-4 col-md-6 my-1">
+
+				<partial name="ArticleCard" model="item" />
+			</div>
+		}
+	</div>
+}

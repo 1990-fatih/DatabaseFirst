@@ -1,0 +1,24 @@
+﻿@model List<IGrouping<string?,Item>>
+
+@{
+    ViewBag.Title = "Startseite";
+}
+
+
+<h3 class="bg-primary text-center text-white">Einkaufsliste</h3>
+
+@foreach(var group in Model)
+{
+    <h5>@group.Key</h5>
+    foreach(var row in group)
+    {
+        <div>
+            <span>@row.Description</span>
+            <a asp-action="Delete" asp-route-id="@row.Id" class="btn btn-danger">X</a>
+
+        </div>
+        
+    }
+}
+
+<a asp-action="NeuerEintrag" class="btn btn-primary">Neuer Eintrag</a>

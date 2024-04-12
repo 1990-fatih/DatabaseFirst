@@ -1,0 +1,18 @@
+﻿@model Item
+
+<h3>Neuer Eintrag: </h3>
+
+<form asp-action="NeuerEintrag" method="post">
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="Shop"></label>
+        <input asp-for="Shop" class="form-control" />
+        <span asp-validation-for="Shop" class="text-danger"></span>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Speichern</button>
+</form>
