@@ -1,0 +1,18 @@
+﻿@model Article
+
+<div class="card">   
+    <div class="card-header" text-center fw-blod>
+        @Model.Headline
+    </div>
+
+    <img src="/img/@Model.ImageFile" alt="Ein schönes Bild" class="img-fluid"/>
+    <div class="card-body">
+        @Model.Content
+    </div>
+
+    <div class="card-footer">
+        @Model.Author | @Model.Created.ToShortDateString()
+    </div>
+</div>
+
+<a asp-action="Index" class="btn btn-primary">Zürück</a>
